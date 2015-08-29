@@ -11,13 +11,16 @@ var User = require('../api/user/user.model');
 Recipe.find({}).remove(function() {
   Recipe.create({
     name: 'Lemon Chicken',
-    minutes: 30
+    minutes: 30,
+    ingredients: ['Chicken', 'Lemon', 'Thyme']
   }, {
     name: 'Beef Stroganoff',
-    minutes: 30
+    minutes: 30,
+    ingredients: ['Beef', 'Mustard', 'Mushrooms']
   }, {
     name: 'Chicken Caesar Salad',
-    minutes: 25
+    minutes: 25,
+    ingredients: ['Lettuce', 'Croutons', 'Parmesan']
   });
 });
 
