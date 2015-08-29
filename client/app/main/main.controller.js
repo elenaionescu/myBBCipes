@@ -1,22 +1,24 @@
 'use strict';
 
 angular.module('myBbcipesApp')
-  .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+  .controller('MainCtrl', function($scope, $http) {
+    $scope.awesomeRecipes = [];
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
+    $http.get('/api/recipes').success(function(awesomeRecipes) {
+      $scope.awesomeRecipes = awesomeRecipes;
     });
 
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
+    $scope.addRecipe = function() {
+      if ($scope.newRecipe === '') {
         return;
       }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
+      $http.post('/api/recipes', {
+        name: $scope.newRecipe
+      });
+      $scope.newRecipe = '';
     };
 
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
+    $scope.deleteRecipes = function(recipe) {
+      $http.delete('/api/recipes/' + recipe._id);
     };
   });
