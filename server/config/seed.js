@@ -48,7 +48,7 @@ Recipe.find({}).remove(function() {
       "name": "Croutons",
       "qty": "1"
     }, {
-      "name": "Lemon",
+      "name": "Parmesan",
       "qty": "1 tsp"
     }],
     imageUrl: 'recipes/chicken_caesar_salad.png',
