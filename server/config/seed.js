@@ -12,15 +12,18 @@ Recipe.find({}).remove(function() {
   Recipe.create({
     name: 'Lemon Chicken',
     minutes: 30,
-    ingredients: ['Chicken', 'Lemon', 'Thyme']
+    ingredients: ['Chicken', 'Lemon', 'Thyme'],
+    imageUrl: 'recipes/lemon_chicken.jpg'
   }, {
     name: 'Beef Stroganoff',
     minutes: 30,
-    ingredients: ['Beef', 'Mustard', 'Mushrooms']
+    ingredients: ['Beef', 'Mustard', 'Mushrooms'],
+    imageUrl: 'recipes/beef_stroganoff.jpg'
   }, {
     name: 'Chicken Caesar Salad',
     minutes: 25,
-    ingredients: ['Lettuce', 'Croutons', 'Parmesan']
+    ingredients: ['Lettuce', 'Croutons', 'Parmesan'],
+    imageUrl: 'recipes/chicken_caesar_salad.png'
   });
 });
 

@@ -1,10 +1,17 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
+<header class="hero-unit" id="banner" style="background-image:url('assets/images/{{ awesomeRecipe.imageUrl }}')">
+  <div class="container">
+    <h1>{{ awesomeRecipe.name }}</h1>
+    <p class="lead">{{ awesomeRecipe.minutes }} minutes</p>
+  </div>
+</header>
+
 <div class="container">
   <div ng-if="!awesomeRecipe">Sorry, this recipe doesn't exist or may have been removed</div>
   <div ng-if="awesomeRecipe"class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">{{ awesomeRecipe.name }} ({{ awesomeRecipe.minutes }} minutes)</h1>
+      <h1 class="page-header">Ingredients needed</h1>
       <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="ingredient in awesomeRecipe.ingredients">
         <li>{{ingredient}}</li>
       </ul>

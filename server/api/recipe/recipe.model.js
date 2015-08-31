@@ -8,6 +8,7 @@ var RecipeSchema = new Schema({
   minutes: Number,
   info: String,
   active: Boolean,
+  imageUrl: String,
   ingredients: Array
 });
 
