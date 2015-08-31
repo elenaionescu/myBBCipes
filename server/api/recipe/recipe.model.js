@@ -9,7 +9,8 @@ var RecipeSchema = new Schema({
   info: String,
   active: Boolean,
   imageUrl: String,
-  ingredients: Array
+  ingredients: Array,
+  stars: Number
 });
 
 module.exports = mongoose.model('Recipe', RecipeSchema);
