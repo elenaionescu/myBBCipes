@@ -1,6 +1,6 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<header class="hero-unit" id="banner" back-img="{{ awesomeRecipe.imageUrl }}">
+<header class="hero-unit" id="banner" ng-if="awesomeRecipe" back-img="{{ awesomeRecipe.imageUrl }}">
   <div class="container">
     <h1>{{ awesomeRecipe.name }}</h1>
     <p class="lead">{{ awesomeRecipe.minutes }} minutes</p>
@@ -16,7 +16,7 @@
         <li><span ng-if="ingredient.qty">{{ ingredient.qty }} x </span>{{ ingredient.name }}</li>
       </ul>
 
-      <button class="btn btn-default" type="button" ng-model="newTodo" ng-click="increment()">{{ starred }} {{ stars }}</button>
+      <button class="btn btn-default" type="button" ng-click="starAction()">{{ isLoggedIn() ? getStarStatus() : "star" }} {{ awesomeRecipe.stars }} </button>
 
     </div>
     <div class="col-lg-8">
