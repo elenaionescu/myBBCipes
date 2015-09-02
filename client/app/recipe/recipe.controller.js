@@ -30,7 +30,6 @@ app.controller('RecipeCtrl', ['$scope', '$stateParams', '$http', 'User', '$cooki
     }, function(recipe) {
       console.log(recipe);
       recipe.$save(function(u, putResponseHeaders) {
-        alert(u);
         alert(putResponseHeaders);
       });
     });

@@ -24,7 +24,7 @@
   <div class="row">
     <div class="col-lg-12">
       <div class="text-center col-md-6 col-lg-6 col-sm-6" dir-paginate="recipe in filteredItems = (awesomeRecipes | filter: search) | lowerThan:form.type | itemsPerPage: 10">
-        <h3><a ui-sref="recipe({recipeId: recipe._id})" tooltip="{{recipe.name}}">{{ recipe.name }}</a></h3>
+        <a ui-sref="recipe({recipeId: recipe._id})" tooltip="{{recipe.name}}">{{ recipe.name }}</a>
          in {{ recipe.minutes }} minutes
          <i class="fa fa-star"></i> {{ recipe.stars }}
          <i class="fa fa-clock-o"></i>
@@ -33,8 +33,10 @@
           <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>
         </ul>
       </div>
-      <div ng-show="filteredItems.length == 0">Sorry, nothing matched your filter term</div>
-    </div>
+    </div>      
+  </div>
+  <div class="text-center">
+    <div ng-show="filteredItems.length == 0">Sorry, nothing matched your filter term</div>
     <dir-pagination-controls></dir-pagination-controls>
     <div ng-hide="awesomeRecipes.length">Sorry, we currently have no recipes for you</div>
   </div>
