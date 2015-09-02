@@ -2,7 +2,6 @@
 
 <header class="hero-unit" id="banner">
   <div class="container">
-    <p class="lead">Now you've got no excuses not to cook</p>
     <div class="row">
       <div class="col-md-3">        
         <label for="search">Recipe name</label>
@@ -23,15 +22,19 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-      <div class="text-center col-md-6 col-lg-6 col-sm-6" dir-paginate="recipe in filteredItems = (awesomeRecipes | filter: search) | lowerThan:form.type | itemsPerPage: 10">
-        <a ui-sref="recipe({recipeId: recipe._id})" tooltip="{{recipe.name}}">{{ recipe.name }}</a>
-         in {{ recipe.minutes }} minutes
-         <i class="fa fa-star"></i> {{ recipe.stars }}
-         <i class="fa fa-clock-o"></i>
-         <i class="fa fa-th-list"></i>
-        <ul class="list-inline">
-          <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>
-        </ul>
+      <div class="recipe-box col-md-2 {{ $index == 0 || $index == 5 ? 'col-md-offset-1' : ''}}" dir-paginate="recipe in filteredItems = (awesomeRecipes | filter: search) | lowerThan:form.type | itemsPerPage: 10">
+        <div>
+          <img src="/assets/images/recipes/sm-{{recipe.imageUrl}}" width="100%" alt="..." class="img-thumbnail">
+        </div>
+        <div>
+          <div class="text-center"><i class="fa fa-clock-o"></i> {{ recipe.minutes }} minutes</div>
+          <h3><a ui-sref="recipe({recipeId: recipe._id})" tooltip="{{recipe.name}}">{{ recipe.name }}</a></h3>
+        </div>
+        <div>
+          <ul>
+            <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>
+          </ul>
+        </div>
       </div>
     </div>      
   </div>
