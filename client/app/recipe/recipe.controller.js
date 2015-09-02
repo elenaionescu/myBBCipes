@@ -2,16 +2,24 @@
 
 var app = angular.module('myBbcipesApp');
 
+app.directive('backImg', function() {
+  return function(scope, element, attrs) {
+    attrs.$observe('backImg', function(value) {
+      element.css({
+        'background-image': 'url(assets/images/recipes/' + value + ')',
+        'background-size': 'cover'
+      });
+    });
+  };
+});
+
 app.factory("Recipes", ['$resource',
   function($resource) {
     return $resource('/api/recipes/:recipeId', {
       recipeId: '@_id',
     }, {
-      foo: {
-        method: 'PUT',
-        params: {
-          recipeId: "@recipeId"
-        }
+      update: {
+        method: 'PUT'
       }
     });
   }
@@ -25,14 +33,13 @@ app.controller('RecipeCtrl', ['$scope', '$stateParams', '$http', 'User', '$cooki
       currentUser = User.get();
     }
 
-    Recipes.foo({
+    var recipe = Recipes.get({
       recipeId: $stateParams.recipeId
-    }, function(recipe) {
-      console.log(recipe);
-      recipe.$save(function(u, putResponseHeaders) {
-        alert(putResponseHeaders);
-      });
     });
+    recipe.stars = 33;
+    Recipes.update({
+      recipeId: $stateParams.recipeId
+    }, recipe);
 
     // get recipe information to display
     $http.get('/api/recipes/' + $stateParams.recipeId).then(function(awesomeRecipe) {
