@@ -47,14 +47,11 @@ exports.create = function(req, res) {
 
 // Updates an existing recipe in the DB.
 exports.update = function(req, res) {
-  console.log("update");
   if (req.body._id) {
     console.log("update 1");
     delete req.body._id;
   }
-  console.log("update 2");
   recipe.findById(req.params.id, function(err, recipe) {
-    console.log(req.body);
     if (err) {
       return handleError(res, err);
     }

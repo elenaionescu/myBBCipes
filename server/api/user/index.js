@@ -14,4 +14,7 @@ router.put('/:id/password', auth.isAuthenticated(), controller.changePassword);
 router.get('/:id', auth.isAuthenticated(), controller.show);
 router.post('/', controller.create);
 
+// added to update starred recipes list of a user
+router.put('/:id/recipes', auth.isAuthenticated(), controller.updateRecipes);
+
 module.exports = router;

@@ -33,46 +33,53 @@ app.factory("Recipes", ['$resource',
 
 app.controller('RecipeCtrl', ['$scope', '$stateParams', '$http', 'User', 'Auth', '$cookieStore', '$resource', 'Recipes',
   function($scope, $stateParams, $http, User, Auth, $cookieStore, $resource, Recipes) {
-    // the recipe to display
+    // The recipe to display
     $scope.awesomeRecipe = Recipes.get({
       recipeId: $stateParams.recipeId
     });
 
+    // Get user information
     $scope.getCurrentUser = Auth.getCurrentUser;
     $scope.isLoggedIn = Auth.isLoggedIn;
 
-    // the action of tagging
+    // When the star button is clicked
+    // could be "Star" or "Unstar" actions
     $scope.starAction = function() {
-      if (!$scope.isLoggedIn()) {
-        return;
+      if ($scope.isLoggedIn()) {
+        if (wasStarredByUser()) {
+          $scope.awesomeRecipe.stars--;
+        } else {
+          $scope.awesomeRecipe.stars++;
+        }
+        User.updateRecipes($scope.getCurrentUser());
+        Recipes.update({
+          recipeId: $stateParams.recipeId
+        }, $scope.awesomeRecipe);
       }
-      if (wasStarredByUser()) {
-        $scope.awesomeRecipe.stars++;
-      } else {
-        $scope.awesomeRecipe.stars--;
-      }
-
-      //alert(JSON.stringify($scope.getCurrentUser(), null, 4));
-      Recipes.update({
-        recipeId: $stateParams.recipeId
-      }, $scope.awesomeRecipe);
     }
 
+    // Called by page to know whether the recipe is stared or not
     $scope.getStarStatus = function() {
-      return $scope.getCurrentUser().recipes.indexOf($stateParams.recipeId) > -1 ? "Star" : "Unstar";
+      var recipes = $scope.getCurrentUser().recipes.toString().split(',');
+      return recipes.indexOf($stateParams.recipeId) > -1;
     }
 
+    // Negative current star status
+    // returns:
+    //  true if recipe was previously stared and has been unstared
+    //  false if recipe was previously unstared and has been stared
     function wasStarredByUser() {
-      var index = $scope.getCurrentUser().recipes.indexOf($stateParams.recipeId);
+      var recipes = $scope.getCurrentUser().recipes.toString().split(',');
+      var index = recipes.indexOf($stateParams.recipeId);
       if (index > -1) {
-        $scope.getCurrentUser().recipes.splice(index, 1);
+        recipes.splice(index, 1);
+        $scope.getCurrentUser().recipes = recipes;
         return true;
       } else {
-        $scope.getCurrentUser().recipes.unshift($stateParams.recipeId);
+        recipes.unshift($stateParams.recipeId);
+        $scope.getCurrentUser().recipes = recipes;
         return false;
       }
     }
-
-    //alert(JSON.stringify(YOUR_OBJECT_HERE, null, 4));
   }
 ]);
