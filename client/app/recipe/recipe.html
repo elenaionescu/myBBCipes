@@ -15,9 +15,11 @@
       <ul ng-repeat="ingredient in awesomeRecipe.ingredients">
         <li><span ng-if="ingredient.qty">{{ ingredient.qty }} x </span>{{ ingredient.name }}</li>
       </ul>
-
-      <button class="btn btn-default" type="button" ng-click="starAction()">{{ isLoggedIn() ? getStarStatus() : "star" }} {{ awesomeRecipe.stars }} </button>
-
+      
+      <div class="btn-group pull-right">
+        <button class="btn btn-danger" ng-click="starAction()"><i class="fa fa-star"></i> {{ isLoggedIn() ? getStarStatus() : "Star" }}  </button>
+        <button class="btn btn-default">{{ awesomeRecipe.stars }}</button>
+      </div>
     </div>
     <div class="col-lg-8">
       <h3 class="page-header">Steps</h3>

@@ -44,23 +44,22 @@ app.controller('RecipeCtrl', ['$scope', '$stateParams', '$http', 'User', 'Auth',
     // the action of tagging
     $scope.starAction = function() {
       if (!$scope.isLoggedIn()) {
-        alert("you are not connected");
         return;
       }
       if (wasStarredByUser()) {
-        $scope.awesomeRecipe.stars--;
-      } else {
         $scope.awesomeRecipe.stars++;
+      } else {
+        $scope.awesomeRecipe.stars--;
       }
 
-      alert(JSON.stringify($scope.getCurrentUser(), null, 4));
+      //alert(JSON.stringify($scope.getCurrentUser(), null, 4));
       Recipes.update({
         recipeId: $stateParams.recipeId
       }, $scope.awesomeRecipe);
     }
 
     $scope.getStarStatus = function() {
-      return $scope.getCurrentUser().recipes.indexOf($stateParams.recipeId) > -1 ? "star" : "unstar";
+      return $scope.getCurrentUser().recipes.indexOf($stateParams.recipeId) > -1 ? "Star" : "Unstar";
     }
 
     function wasStarredByUser() {
