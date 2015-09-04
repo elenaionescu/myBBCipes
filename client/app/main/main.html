@@ -24,10 +24,11 @@
     <div class="col-lg-12">
       <div class="recipe-box col-md-2 {{ $index == 0 || $index == 5 ? 'col-md-offset-1' : ''}}" dir-paginate="recipe in filteredItems = (awesomeRecipes | filter: search) | lowerThan:form.type | itemsPerPage: 10">
         <div>
+          <div class="recipe-minutes recipe-minutes-bg"></div>
+          <div class="recipe-minutes recipe-minutes-text"><i class="fa fa-clock-o"></i> {{ recipe.minutes }} minutes</div>
           <img ng-src="assets/images/recipes/sm-{{recipe.imageUrl}}" width="100%" alt="..." class="img-thumbnail">
         </div>
         <div>
-          <div class="text-center"><i class="fa fa-clock-o"></i> {{ recipe.minutes }} minutes</div>
           <h3><a ui-sref="recipe({recipeId: recipe._id})" tooltip="{{recipe.name}}">{{ recipe.name }}</a></h3>
         </div>
         <div>
