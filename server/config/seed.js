@@ -51,7 +51,7 @@ Recipe.find({}).remove(function() {
       "name": "Parmesan",
       "qty": "1 tsp"
     }],
-    imageUrl: 'chicken_caesar_salad.png',
+    imageUrl: 'chicken_caesar_salad.jpg',
     stars: 0
   }, {
     name: 'Lemon Chicken',
@@ -95,7 +95,7 @@ Recipe.find({}).remove(function() {
       "name": "Parmesan",
       "qty": "1 tsp"
     }],
-    imageUrl: 'chicken_caesar_salad.png',
+    imageUrl: 'chicken_caesar_salad.jpg',
     stars: 0
   }, {
     name: 'Lemon Chicken',
@@ -139,7 +139,7 @@ Recipe.find({}).remove(function() {
       "name": "Parmesan",
       "qty": "1 tsp"
     }],
-    imageUrl: 'chicken_caesar_salad.png',
+    imageUrl: 'chicken_caesar_salad.jpg',
     stars: 0
   }, {
     name: 'Lemon Chicken',
@@ -183,7 +183,7 @@ Recipe.find({}).remove(function() {
       "name": "Parmesan",
       "qty": "1 tsp"
     }],
-    imageUrl: 'chicken_caesar_salad.png',
+    imageUrl: 'chicken_caesar_salad.jpg',
     stars: 0
   }, {
     name: 'Lemon Chicken',
@@ -227,7 +227,7 @@ Recipe.find({}).remove(function() {
       "name": "Parmesan",
       "qty": "1 tsp"
     }],
-    imageUrl: 'chicken_caesar_salad.png',
+    imageUrl: 'chicken_caesar_salad.jpg',
     stars: 0
   });
 });

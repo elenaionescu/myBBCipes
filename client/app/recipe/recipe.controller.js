@@ -58,7 +58,7 @@ app.controller('RecipeCtrl', ['$scope', '$stateParams', '$http', 'User', 'Auth',
       }
     }
 
-    // Called by page to know whether the recipe is stared or not
+    // Called by page to know whether the recipe is starred or not
     $scope.getStarStatus = function() {
       var recipes = $scope.getCurrentUser().recipes.toString().split(',');
       return recipes.indexOf($stateParams.recipeId) > -1;
@@ -66,8 +66,8 @@ app.controller('RecipeCtrl', ['$scope', '$stateParams', '$http', 'User', 'Auth',
 
     // Negative current star status
     // returns:
-    //  true if recipe was previously stared and has been unstared
-    //  false if recipe was previously unstared and has been stared
+    //  true if recipe was previously starred and has been unstarred
+    //  false if recipe was previously unstarred and has been starred
     function wasStarredByUser() {
       var recipes = $scope.getCurrentUser().recipes.toString().split(',');
       var index = recipes.indexOf($stateParams.recipeId);

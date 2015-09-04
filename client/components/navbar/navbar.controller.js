@@ -3,8 +3,11 @@
 angular.module('myBbcipesApp')
   .controller('NavbarCtrl', function($scope, $location, Auth) {
     $scope.menu = [{
-      'title': 'Home',
+      'title': 'All recipes',
       'link': '/'
+    }, {
+      'title': 'Your stars',
+      'link': '/stars'
     }];
 
     $scope.isCollapsed = true;
