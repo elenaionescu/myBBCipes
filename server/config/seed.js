@@ -22,7 +22,7 @@ Recipe.find({}).remove(function() {
       "name": "Thyme",
       "qty": "1 tsp"
     }],
-    imageUrl: 'lemon_chicken.jpg',
+    imageUrl: 'chicken_lemon.png',
     stars: 0
   }, {
     name: 'Beef Stroganoff',
@@ -36,7 +36,7 @@ Recipe.find({}).remove(function() {
       "name": "Mushrooms",
       "qty": "1 tsp"
     }],
-    imageUrl: 'beef_stroganoff.jpg',
+    imageUrl: 'beef_stroganoff.png',
     stars: 0
   }, {
     name: 'Chicken Caesar Salad',
@@ -51,7 +51,7 @@ Recipe.find({}).remove(function() {
       "name": "Parmesan",
       "qty": "1 tsp"
     }],
-    imageUrl: 'chicken_caesar_salad.jpg',
+    imageUrl: 'chicken_caesar.png',
     stars: 0
   }, {
     name: 'Lemon Chicken',
@@ -66,7 +66,7 @@ Recipe.find({}).remove(function() {
       "name": "Thyme",
       "qty": "1 tsp"
     }],
-    imageUrl: 'lemon_chicken.jpg',
+    imageUrl: 'chicken_lemon.png',
     stars: 0
   }, {
     name: 'Beef Stroganoff',
@@ -80,7 +80,7 @@ Recipe.find({}).remove(function() {
       "name": "Mushrooms",
       "qty": "1 tsp"
     }],
-    imageUrl: 'beef_stroganoff.jpg',
+    imageUrl: 'beef_stroganoff.png',
     stars: 0
   }, {
     name: 'Chicken Caesar Salad',
@@ -95,7 +95,7 @@ Recipe.find({}).remove(function() {
       "name": "Parmesan",
       "qty": "1 tsp"
     }],
-    imageUrl: 'chicken_caesar_salad.jpg',
+    imageUrl: 'chicken_caesar.png',
     stars: 0
   }, {
     name: 'Lemon Chicken',
@@ -110,7 +110,7 @@ Recipe.find({}).remove(function() {
       "name": "Thyme",
       "qty": "1 tsp"
     }],
-    imageUrl: 'lemon_chicken.jpg',
+    imageUrl: 'chicken_lemon.png',
     stars: 0
   }, {
     name: 'Beef Stroganoff',
@@ -124,7 +124,7 @@ Recipe.find({}).remove(function() {
       "name": "Mushrooms",
       "qty": "1 tsp"
     }],
-    imageUrl: 'beef_stroganoff.jpg',
+    imageUrl: 'beef_stroganoff.png',
     stars: 0
   }, {
     name: 'Chicken Caesar Salad',
@@ -139,7 +139,7 @@ Recipe.find({}).remove(function() {
       "name": "Parmesan",
       "qty": "1 tsp"
     }],
-    imageUrl: 'chicken_caesar_salad.jpg',
+    imageUrl: 'chicken_caesar.png',
     stars: 0
   }, {
     name: 'Lemon Chicken',
@@ -154,7 +154,7 @@ Recipe.find({}).remove(function() {
       "name": "Thyme",
       "qty": "1 tsp"
     }],
-    imageUrl: 'lemon_chicken.jpg',
+    imageUrl: 'chicken_lemon.png',
     stars: 0
   }, {
     name: 'Beef Stroganoff',
@@ -168,7 +168,7 @@ Recipe.find({}).remove(function() {
       "name": "Mushrooms",
       "qty": "1 tsp"
     }],
-    imageUrl: 'beef_stroganoff.jpg',
+    imageUrl: 'beef_stroganoff.png',
     stars: 0
   }, {
     name: 'Chicken Caesar Salad',
@@ -183,7 +183,7 @@ Recipe.find({}).remove(function() {
       "name": "Parmesan",
       "qty": "1 tsp"
     }],
-    imageUrl: 'chicken_caesar_salad.jpg',
+    imageUrl: 'chicken_caesar.png',
     stars: 0
   }, {
     name: 'Lemon Chicken',
@@ -198,7 +198,7 @@ Recipe.find({}).remove(function() {
       "name": "Thyme",
       "qty": "1 tsp"
     }],
-    imageUrl: 'lemon_chicken.jpg',
+    imageUrl: 'chicken_lemon.png',
     stars: 0
   }, {
     name: 'Beef Stroganoff',
@@ -212,7 +212,7 @@ Recipe.find({}).remove(function() {
       "name": "Mushrooms",
       "qty": "1 tsp"
     }],
-    imageUrl: 'beef_stroganoff.jpg',
+    imageUrl: 'beef_stroganoff.png',
     stars: 0
   }, {
     name: 'Chicken Caesar Salad',
@@ -227,7 +227,7 @@ Recipe.find({}).remove(function() {
       "name": "Parmesan",
       "qty": "1 tsp"
     }],
-    imageUrl: 'chicken_caesar_salad.jpg',
+    imageUrl: 'chicken_caesar.png',
     stars: 0
   });
 });

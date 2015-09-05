@@ -31,8 +31,8 @@ app.factory("Recipes", ['$resource',
   }
 ]);
 
-app.controller('RecipeCtrl', ['$scope', '$stateParams', '$http', 'User', 'Auth', '$cookieStore', '$resource', 'Recipes',
-  function($scope, $stateParams, $http, User, Auth, $cookieStore, $resource, Recipes) {
+app.controller('RecipeCtrl', ['$scope', '$stateParams', '$http', '$state', 'User', 'Auth', '$cookieStore', '$resource', 'Recipes',
+  function($scope, $stateParams, $http, $state, User, Auth, $cookieStore, $resource, Recipes) {
     // The recipe to display
     $scope.awesomeRecipe = Recipes.get({
       recipeId: $stateParams.recipeId
@@ -55,6 +55,8 @@ app.controller('RecipeCtrl', ['$scope', '$stateParams', '$http', 'User', 'Auth',
         Recipes.update({
           recipeId: $stateParams.recipeId
         }, $scope.awesomeRecipe);
+      } else {
+        $state.go('login');
       }
     }
 
